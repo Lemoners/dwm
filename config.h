@@ -74,6 +74,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x32", NULL };
+static const char *flameshotcmd[] = {"flameshot", "gui", NULL};
+static const char *googlecmd[] = {"google-chrome", NULL};
+
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -111,6 +114,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
 	{ MODKEY|ShiftMask,             XK_s,      hide,           {0} },
+	{ MODKEY,                       XK_g,      spawn,           {.v = googlecmd} },
+	{ MODKEY,                       XK_a,      spawn,           {.v = flameshotcmd} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
